@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_201951) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.float "amount"
+    t.string "amount"
     t.integer "roll_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_201951) do
 
   create_table "rolls", force: :cascade do |t|
     t.string "name"
-    t.integer "price"
+    t.float "price"
     t.integer "rating"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
