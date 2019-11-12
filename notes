@@ -1,0 +1,10 @@
+Roll
+has_many :ingredients
+  :name - string
+  :price - integer
+  :rating - integer
+
+ingredient
+belongs_to :roll
+  :name -string
+  :amount - integer 
