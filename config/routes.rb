@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :rolls do
         resources :ingredients
       # post '/add', to: 'ingredients#create'
+      end
     end
   end
 
