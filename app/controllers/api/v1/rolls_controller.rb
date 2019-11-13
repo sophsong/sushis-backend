@@ -9,11 +9,13 @@ class Api::V1::RollsController < ApplicationController
     roll = Roll.find(params[:id])
   end
 
-
   def create
     roll = Roll.new(roll_params)
-    roll.save
-    render json: roll
+    if roll.save
+      render json: roll
+    else
+      render json: {error: "Please finish filling out form."}
+    end
   end
 
   private
