@@ -1,6 +1,7 @@
 class Api::V1::RollsController < ApplicationController
 
   def index
+    byebug
     rolls = Roll.all
     render json: rolls
   end
