@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      # resources :ingredients
+      resources :ingredients
+      # so you don't jsut have to access ingredients thru a specific roll, but can look at the index of them too
       resources :rolls do
         resources :ingredients
       # post '/add', to: 'ingredients#create'
+      end
     end
   end
 
