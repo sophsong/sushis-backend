@@ -1,16 +1,12 @@
 class Api::V1::RollsController < ApplicationController
 
   def index
-    byebug
     rolls = Roll.all
     render json: rolls
   end
 
-  def show
-    roll = Roll.find(params[:id])
-  end
-
   def create
+
     roll = Roll.new(roll_params)
     if roll.save
       render json: roll
@@ -19,9 +15,14 @@ class Api::V1::RollsController < ApplicationController
     end
   end
 
+  def show
+    roll = Roll.find(params[:id])
+  end
+
+
   private
 
   def roll_params
-    params.permit(:name, :price, :rating, :description)
+    params.require(:roll).permit(:name, :price, :rating, :description)
   end
 end
