@@ -5,9 +5,8 @@ class Api::V1::RollsController < ApplicationController
     render json: rolls
   end
 
-
   def create
-  
+
     roll = Roll.new(roll_params)
     if roll.save
       render json: roll
