@@ -15,6 +15,11 @@ class Api::V1::RollsController < ApplicationController
     end
   end
 
+  def ingredients
+    @roll = Roll.find(params[:id])
+    render json: @roll.ingredients
+  end
+
   def show
     roll = Roll.find(params[:id])
   end

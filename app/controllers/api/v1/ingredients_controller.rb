@@ -2,12 +2,11 @@ class Api::V1::IngredientsController < ApplicationController
 
   before action :find_roll
 
-
-
   def index
     ingredients = @roll.ingredients
     render json: ingredients
   end
+
 
   def create
     ingredient = Ingredient.new(ingredient_params)
