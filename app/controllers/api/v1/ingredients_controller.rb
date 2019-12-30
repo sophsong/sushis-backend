@@ -1,9 +1,9 @@
 class Api::V1::IngredientsController < ApplicationController
 
-  before action :find_roll
+
 
   def index
-    ingredients = @roll.ingredients
+    ingredients = Ingredient.all
     render json: ingredients
   end
 
